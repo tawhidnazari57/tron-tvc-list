@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><title>blockinfo</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta name="format-detection" content="telephone=no" />
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<!-- jQuery library --><script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head><body>
+<div class="container-fluid">
+<nav class="navbar navbar-expand px-0 mt-1 flex-wrap">
+<ul class="navbar-nav ml-1 mr-5 my-1">
+<li class="nav-item"><a class="nav-link" href="/status">status</a></li>
+<li class="nav-item"><a class="nav-link" href="/last">last</a></li>
+</ul><form class="my-1 my-lg-0 flex-grow-1" action="/account" method="get"><div class="input-group ml-auto" style="max-width:540px;"><input class="form-control mr-2 rounded" type="search" placeholder="account" aria-label="account" name="account"><div class="input-group-append"><button class="btn btn-outline-primary rounded" type="submit">view</button></div></div></form></nav>
+<p>
+<a class="btn btn-primary mt-1" data-toggle="collapse" href="#blocksearch" role="button" aria-expanded="false" aria-controls="blocksearch">
+Search block
+</a>
+<a class="btn btn-primary mt-1" data-toggle="collapse" href="#accountsearch" role="button" aria-expanded="false" aria-controls="accountsearch">
+Search account
+</a>
+<a class="btn btn-primary mt-1" data-toggle="collapse" href="#transactionsearch" role="button" aria-expanded="false" aria-controls="transactionsearch">
+Search transaction
+</a>
+</p>
+<div id="searchgroup">
+<div class="collapse" data-parent="#searchgroup" id="blocksearch">
+<div class="card card-body">
+<form class="container" action="/search" method="get"><div class="row"><div class="form-group col-lg-3 col-md-4"><label>workchain</label><input type="text" class="form-control mr-2" name="workchain" value="-1"></div>
+<div class="form-group col-lg-3 col-md-4"><label>shard/account</label><input type ="text" class="form-control mr-2" name="shard" value="8000000000000000"></div><div class="form-group col-lg-3 col-md-4"><label>seqno</label><input type ="text" class="form-control mr-2" name="seqno" value="39518704"></div><div class="form-group col-lg-3 col-md-4"><label class="d-none d-lg-block">&nbsp;</label><div><button type="submit" class="btn btn-primary mr-2">Submit</button></div></div></div><div class="row"><div class="form-group col-md-6"><label>logical time</label><input type="text" class="form-control mr-2" name="lt"></div>
+<div class="form-group col-md-6"><label>unix time</label><input type ="text" class="form-control mr-2" name="utime"></div></div><div class="row"><div class="form-group col-md-6"><label>root hash</label><input type ="text" class="form-control mr-2" name="roothash" value=""></div><div class="col-md-6"><label>file hash</label><input type ="text" class="form-control mr-2" name="filehash" value=""></div></div></form>
+</div></div>
+<div class="collapse" data-parent="#searchgroup" id="accountsearch">
+<div class="card card-body">
+<form class="container" action="/account" method="get"><div class="row"><div class="form-group col-lg-3 col-md-4"><label>workchain</label><input type ="text" class="form-control mr-2" name="workchain" value="-1"></div><div class="form-group col-lg-3 col-md-4"><label>shard</label><input type ="text" class="form-control mr-2" name="shard" value="8000000000000000"></div><div class="form-group col-lg-3 col-md-4"><label>seqno</label><input type ="text" class="form-control mr-2" name="seqno" value="39518704"></div><div class="form-group col-lg-3 col-md-4"><label class="d-none d-lg-block">&nbsp;</label><div><button type="submit" class="btn btn-primary mr-2">Submit</button><button class="btn btn-outline-primary" type="reset">Reset</button></div></div></div><div class="row"><div class="form-group col-md-6"><label>root hash</label><input type ="text" class="form-control mr-2" name="roothash" value="70BF0EE0C83BD18C8FE0D2F06565A9D1541A05868786CCE821CF84410D4E527F"></div><div class="form-group col-md-6"><label>file hash</label><input type ="text" class="form-control mr-2" name="filehash" value="70354C20F09A8E1EAE68DC653080F9AD623FA9395CAFFCD4901CC95CB46BA273"></div></div><div class="row"><div class="form-group col-md-12"><label>account id</label><input type ="text" class="form-control mr-2" name="account" value=""></div></div>
+</form>
+</div></div>
+<div class="collapse" data-parent="#searchgroup" id="transactionsearch">
+<div class="card card-body">
+<form class="container" action="/transaction" method="get"><div class="row"><div class="form-group col-lg-3 col-md-4"><label>workchain</label><input type ="text" class="form-control mr-2" name="workchain" value="-1"></div><div class="form-group col-lg-3 col-md-4"><label>shard</label><input type ="text" class="form-control mr-2" name="shard" value="8000000000000000"></div><div class="form-group col-lg-3 col-md-4"><label>seqno</label><input type ="text" class="form-control mr-2" name="seqno" value="39518704"></div><div class="form-group col-lg-3 col-md-4"><label class="d-none d-lg-block">&nbsp;</label><div><button type="submit" class="btn btn-primary mr-2">Submit</button><button class="btn btn-outline-primary" type="reset">Reset</button></div></div></div><div class="row"><div class="form-group col-md-6"><label>root hash</label><input type ="text" class="form-control mr-2" name="roothash" value="70BF0EE0C83BD18C8FE0D2F06565A9D1541A05868786CCE821CF84410D4E527F"></div><div class="form-group col-md-6"><label>file hash</label><input type ="text" class="form-control mr-2" name="filehash" value="70354C20F09A8E1EAE68DC653080F9AD623FA9395CAFFCD4901CC95CB46BA273"></div></div><div class="row"><div class="form-group col-md-12"><label>account id</label><input type ="text" class="form-control mr-2" name="account" value=""></div></div><div class="row"><div class="form-group col-md-3"><label>transaction lt</label><input type ="text" class="form-control mr-2" name="lt" value=""></div><div class="form-group col-md-9"><label>transaction hash</label><input type ="text" class="form-control mr-2" name="hash" value=""></div></div>
+</form>
+</div></div></div>
+<div><div class="table-responsive my-3">
+<table class="table-sm table-striped">
+<tr><th>block</th><td>(-1,8000000000000000,39518704)</td></tr>
+<tr><th>roothash</th><td>70BF0EE0C83BD18C8FE0D2F06565A9D1541A05868786CCE821CF84410D4E527F</td></tr>
+<tr><th>filehash</th><td>70354C20F09A8E1EAE68DC653080F9AD623FA9395CAFFCD4901CC95CB46BA273</td></tr>
+<tr><th>time</th><td>1722958728 (2024-08-06 15:38:48, 15m 38s ago)</td></tr>
+<tr><th>lt</th><td>48265550000000 .. 48265550000004</td></tr>
+<tr><th>global_id</th><td>-239</td></tr>
+<tr><th>version</th><td>0</td></tr>
+<tr><th>flags</th><td>1</td></tr>
+<tr><th>key_block</th><td>false</td></tr>
+<tr><th>not_master</th><td>false</td></tr>
+<tr><th>after_merge</th><td>false</td></tr>
+<tr><th>after_split</th><td>false</td></tr>
+<tr><th>before_split</th><td>false</td></tr>
+<tr><th>want_merge</th><td>true</td></tr>
+<tr><th>want_split</th><td>false</td></tr>
+<tr><th>validator_list_hash_short</th><td>2722080661</td></tr>
+<tr><th>catchain_seqno</th><td>593435</td></tr>
+<tr><th>min_ref_mc_seqno</th><td>39518701</td></tr>
+<tr><th>vert_seqno</th><td>1</td></tr>
+<tr><th>vert_seqno_incr</th><td>false</td></tr>
+<tr><th>prev_key_block_seqno</th><td><a href="/search?workchain=-1&shard=8000000000000000&seqno=39517532">(-1,8000000000000000,39517532)</a></td></tr>
+<tr><th>prev block</th><td><a href="/block?workchain=-1&shard=8000000000000000&seqno=39518703&roothash=FFCECB38FB1A26E43EA85552F2211C26CC6662E3D21C86EDA0910671B2157066&filehash=3986F029D90BB9E505C77A670697D1E64038208C325054A12D762C0CE924691F">(-1,8000000000000000,39518703)</a></td></tr>
+<tr><th>next block</th><td><a href="/search?workchain=-1&shard=8000000000000000&seqno=39518705">(-1,8000000000000000,39518705)</a></td></tr>
+<tr><th>masterchain block</th><td><a href="/block?workchain=-1&shard=8000000000000000&seqno=39518703&roothash=FFCECB38FB1A26E43EA85552F2211C26CC6662E3D21C86EDA0910671B2157066&filehash=3986F029D90BB9E505C77A670697D1E64038208C325054A12D762C0CE924691F">(-1,8000000000000000,39518703)</a></td></tr>
+</table></div><p><a class="btn btn-primary mr-2" href="/download?workchain=-1&shard=8000000000000000&seqno=39518704&roothash=70BF0EE0C83BD18C8FE0D2F06565A9D1541A05868786CCE821CF84410D4E527F&filehash=70354C20F09A8E1EAE68DC653080F9AD623FA9395CAFFCD4901CC95CB46BA273" download="70354C20F09A8E1EAE68DC653080F9AD623FA9395CAFFCD4901CC95CB46BA273.boc">download block</a><a class="btn btn-primary" href="/viewblock?workchain=-1&shard=8000000000000000&seqno=39518704&roothash=70BF0EE0C83BD18C8FE0D2F06565A9D1541A05868786CCE821CF84410D4E527F&filehash=70354C20F09A8E1EAE68DC653080F9AD623FA9395CAFFCD4901CC95CB46BA273">view block</a>
+<a class="btn btn-primary" href="/config?workchain=-1&shard=8000000000000000&seqno=39518704&roothash=70BF0EE0C83BD18C8FE0D2F06565A9D1541A05868786CCE821CF84410D4E527F&filehash=70354C20F09A8E1EAE68DC653080F9AD623FA9395CAFFCD4901CC95CB46BA273">view config</a>
+</p></div><div class="table-responsive my-3">
+<table class="table">
+<tbody>
+<thead>
+<tr>
+<th scope="col">shard</th><th scope="col">seqno</th><th scope="col">created</th><th scope="col">wantsplit</th><th scope="col">wantmerge</th><th scope="col">beforesplit</th><th scope="col">beforemerge</th></tr>
+</thead>
+<tr><td>(0,4000000000000000)</td><td><a href="/block?workchain=0&shard=4000000000000000&seqno=44964535&roothash=C7A919EC74C211860212497643AEABC9CCBA43F5E54F5374B766738337498843&filehash=B32AB863A61E7957B9FA3C78355D07D693617F2B5DB7C3B38FEE9886BE12824D">44964535</a></td><td><span title="2024-08-06 15:38:43, 15m 43s ago">1722958723</span></td><td>false</td><td>false</td><td>false</td><td>false</td></tr><tr><td>(0,c000000000000000)</td><td><a href="/block?workchain=0&shard=c000000000000000&seqno=44964091&roothash=259CDA1CDD997818978107658DA5B91BDD5308AF1FECD84C1AD1DE9E4777054A&filehash=3A9B6F3C25AAFFF99870D175457956A49212D42E75CC05252073B86DC98D71F9">44964091</a></td><td><span title="2024-08-06 15:38:42, 15m 44s ago">1722958722</span></td><td>false</td><td>false</td><td>false</td><td>false</td></tr></tbody></table></div><div class="table-responsive my-3">
+<table class="table">
+<tbody>
+<thead>
+<tr>
+<th scope="col">seq</th><th scope="col">account</th><th scope="col">lt</th><th scope="col">hash</th><th scope="col">link</th></tr>
+</thead>
+<tr><td><a href="/transaction?account=Ef8zMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzM0vF&lt=48265550000001&hash=7E0D8BA32B72A6620D79BDDD5C96602F1D9BFE600475A4336390BA31E38E19B0">1</a></td><td><a href="/account?workchain=-1&shard=8000000000000000&seqno=39518704&roothash=70BF0EE0C83BD18C8FE0D2F06565A9D1541A05868786CCE821CF84410D4E527F&filehash=70354C20F09A8E1EAE68DC653080F9AD623FA9395CAFFCD4901CC95CB46BA273&account=Ef8zMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzM0vF">Ef8zMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzM0vF</a></td><td>48265550000001</td><td>7E0D8BA32B72A6620D79BDDD5C96602F1D9BFE600475A4336390BA31E38E19B0</td><td><a href="/transaction?account=Ef8zMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzM0vF&lt=48265550000001&hash=7E0D8BA32B72A6620D79BDDD5C96602F1D9BFE600475A4336390BA31E38E19B0">view</a></td></tr><tr><td><a href="/transaction?account=Ef8zMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzM0vF&lt=48265550000002&hash=68AD032E84540F8185A292F11163D9639EA540EFFB33C428A53C6DE8F355393B">2</a></td><td><a href="/account?workchain=-1&shard=8000000000000000&seqno=39518704&roothash=70BF0EE0C83BD18C8FE0D2F06565A9D1541A05868786CCE821CF84410D4E527F&filehash=70354C20F09A8E1EAE68DC653080F9AD623FA9395CAFFCD4901CC95CB46BA273&account=Ef8zMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzM0vF">Ef8zMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzM0vF</a></td><td>48265550000002</td><td>68AD032E84540F8185A292F11163D9639EA540EFFB33C428A53C6DE8F355393B</td><td><a href="/transaction?account=Ef8zMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzM0vF&lt=48265550000002&hash=68AD032E84540F8185A292F11163D9639EA540EFFB33C428A53C6DE8F355393B">view</a></td></tr><tr><td><a href="/transaction?account=Ef9VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVbxn&lt=48265550000003&hash=90659538316C774DD1FAC8AEDF369320A38F542E4CF5F7C8E0DC996A3398B4BF">3</a></td><td><a href="/account?workchain=-1&shard=8000000000000000&seqno=39518704&roothash=70BF0EE0C83BD18C8FE0D2F06565A9D1541A05868786CCE821CF84410D4E527F&filehash=70354C20F09A8E1EAE68DC653080F9AD623FA9395CAFFCD4901CC95CB46BA273&account=Ef9VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVbxn">Ef9VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVbxn</a></td><td>48265550000003</td><td>90659538316C774DD1FAC8AEDF369320A38F542E4CF5F7C8E0DC996A3398B4BF</td><td><a href="/transaction?account=Ef9VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVbxn&lt=48265550000003&hash=90659538316C774DD1FAC8AEDF369320A38F542E4CF5F7C8E0DC996A3398B4BF">view</a></td></tr></tbody></table></div></div></body></html>
